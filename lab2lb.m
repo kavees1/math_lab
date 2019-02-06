@@ -1,0 +1,25 @@
+function [mean] = lab2lb(n)
+pr1 = 1e-3; 
+alpha = 3; 
+distance1 = 0.001; 
+Pn = 1e-6;
+k = pr1 * distance1.^alpha; 
+ 
+sinrsum = 0;
+ for f = 1:1:10  
+       
+    d = realmin + (2*sqrt(2)- realmin).*rand(2,1);
+    dr = min(d);  
+    d(d == dr) = []; 
+    di = d; 
+    pi = k ./ (di.^alpha);  
+    pr = k ./ (dr.^alpha); 
+    sinr = pr ./ (Pn + pi);
+    sinrsum = sinrsum + sinr;
+end
+
+ 
+mean = sinrsum/n;
+
+
+end

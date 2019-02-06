@@ -1,0 +1,38 @@
+d) 
+i)the monte carlo simulation was implementted by
+first making a random distance between the minimum value
+and the maximum value then we set the closest distance
+to dr which is the distance for the received power.
+THe di is the distance for the interferance power
+with the distance we can calulate the power using 
+p = k / (d^ alpha)
+k is the porpotionaliy constant calculated by the received
+power measured at 1m
+this is the same steps to get the received power and the
+interference power 
+once we get a value for those two power we plug them into
+the sinr
+All the above calcluation was for one instance
+We do the whole calculation in the loop to calculate for 
+a large number of instance
+We have a value outside the loop which is the sum of 
+old sinr values  and once one instance is done we update
+the old sinr value with the new sinr
+After all the instances are calculated we divide the sum 
+by the number of instances to get the average
+
+ii) As d get larger the averge sinr gets lower.  This is 
+because d = n\A where n is the number of base stations 
+and A is a fixed area which is 16 km.
+The formula for sinr = pr/pn+sumpi
+The number of base station will affect the pi in the sinr 
+formula because pr is found the min distance but pi is found 
+with the remainder of the n distances.
+So as n increases the pi will increase which means the 
+sinr will decrease.
+
+2)  b) When you change the power parameter you don't notice any change to the graph
+When you change the path loss it doesn't change the graph however the mean does 
+decrease when you increase the path loss exponenet 
+When you change the noise power the graph does not change however the mean value
+does decrease when you increase the noise power
